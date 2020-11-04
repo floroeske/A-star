@@ -1,33 +1,34 @@
-#include <opencv2/core.hpp>
-#include <opencv2/imgcodecs.hpp>
 #include <iostream>
+#include <opencv2/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>
 
 using namespace std;
 using namespace cv;
 
 const string M50_1[] = {
-        "/Users/makito/Temp/Astar/Map50_1.bmp",
-        "/Users/makito/Temp/Astar/Map50_1_Out.png",
-        "/Users/makito/Temp/Astar/Map50_1_Path.png"
+        "./assets/Map50_1.bmp",
+        "./assets/Map50_1_Out.png",
+        "./assets/Map50_1_Path.png"
 };
 
 const string M50_2[] = {
-        "/Users/makito/Temp/Astar/Map50_2.bmp",
-        "/Users/makito/Temp/Astar/Map50_2_Out.png",
-        "/Users/makito/Temp/Astar/Map50_2_Path.png"
+        "./assets/Map50_2.bmp",
+        "./assets/Map50_2_Out.png",
+        "./assets/Map50_2_Path.png"
 };
 
 const string M50_3[] = {
-        "/Users/makito/Temp/Astar/Map50_3.bmp",
-        "/Users/makito/Temp/Astar/Map50_3_Out.png",
-        "/Users/makito/Temp/Astar/Map50_3_Path.png"
+        "./assets/Map50_3.bmp",
+        "./assets/Map50_3_Out.png",
+        "./assets/Map50_3_Path.png"
 };
 
 const string BRAIN_FUCKING[] = {
-        "/Users/makito/Temp/Astar/Map_Brain_Fucking.png",
-        "/Users/makito/Temp/Astar/Map_Brain_Fucking_Out.png",
-        "/Users/makito/Temp/Astar/Map_Brain_Fucking_Path.png"
+        "./assets/Map_Brain_Fucking.png",
+        "./assets/Map_Brain_Fucking_Out.png",
+        "./assets/Map_Brain_Fucking_Path.png"
 };
 
 const int ALLOW_VERTEX_PASSTHROUGH = 0;
@@ -170,6 +171,9 @@ int main() {
 
     drawPath(map, path);
     imwrite(FILE_PATH[2], map);
+
+    cv::imshow("out", map);
+    cv::waitKey(0);
 
     return 0;
 }
